@@ -4,10 +4,10 @@
 const quizConfig = {
     // Correct answers for each question (a, b, c, or d)
     answers: {
-        1: 'b',  // Question 1 correct answer
-        2: 'a',  // Question 2 correct answer
-        3: 'c',  // Question 3 correct answer
-        4: 'd'   // Question 4 correct answer
+        1: 'a',  // Question 1: Ed - "fuck me NZ is pretty"
+        2: 'd',  // Question 2: 14 hours
+        3: 'a',  // Question 3: Suzi & Ed x (Behave!!)
+        4: 'a'   // Question 4: Paintbrushes, Guinness, Canvas
     },
     
     // Secret codes for each location (case-insensitive)
