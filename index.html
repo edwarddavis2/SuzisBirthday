@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Suzi! 🎂</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Homepage -->
+        <div id="homepage" class="page active">
+            <div class="birthday-card">
+                <h1>🎉 Happy Birthday Suzi! 🎉</h1>
+                <div class="cake-emoji">🎂</div>
+                <p class="birthday-message">
+                    Wishing you the most amazing birthday filled with joy, laughter, and wonderful surprises!
+                </p>
+                <p class="adventure-intro">
+                    I've prepared a special birthday treasure hunt just for you! 
+                    Answer the questions correctly and follow the clues to find your surprises!
+                </p>
+                <button class="btn btn-primary" onclick="startQuiz()">Start Your Adventure! 🎁</button>
+            </div>
+        </div>
+
+        <!-- Question Pages -->
+        <div id="question1" class="page">
+            <div class="question-card">
+                <h2>Question 1</h2>
+                <p class="question-text">What year did we first meet?</p>
+                <div class="options">
+                    <button class="btn btn-option" onclick="checkAnswer(1, 'a')">2018</button>
+                    <button class="btn btn-option" onclick="checkAnswer(1, 'b')">2019</button>
+                    <button class="btn btn-option" onclick="checkAnswer(1, 'c')">2020</button>
+                    <button class="btn btn-option" onclick="checkAnswer(1, 'd')">2021</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="question2" class="page">
+            <div class="question-card">
+                <h2>Question 2</h2>
+                <p class="question-text">What was our first meal together?</p>
+                <div class="options">
+                    <button class="btn btn-option" onclick="checkAnswer(2, 'a')">Pizza</button>
+                    <button class="btn btn-option" onclick="checkAnswer(2, 'b')">Sushi</button>
+                    <button class="btn btn-option" onclick="checkAnswer(2, 'c')">Pasta</button>
+                    <button class="btn btn-option" onclick="checkAnswer(2, 'd')">Burgers</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="question3" class="page">
+            <div class="question-card">
+                <h2>Question 3</h2>
+                <p class="question-text">What is our favourite movie to watch together?</p>
+                <div class="options">
+                    <button class="btn btn-option" onclick="checkAnswer(3, 'a')">The Notebook</button>
+                    <button class="btn btn-option" onclick="checkAnswer(3, 'b')">Titanic</button>
+                    <button class="btn btn-option" onclick="checkAnswer(3, 'c')">Love Actually</button>
+                    <button class="btn btn-option" onclick="checkAnswer(3, 'd')">The Princess Bride</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="question4" class="page">
+            <div class="question-card">
+                <h2>Question 4 - Final Question!</h2>
+                <p class="question-text">What is our special song?</p>
+                <div class="options">
+                    <button class="btn btn-option" onclick="checkAnswer(4, 'a')">Perfect - Ed Sheeran</button>
+                    <button class="btn btn-option" onclick="checkAnswer(4, 'b')">Thinking Out Loud - Ed Sheeran</button>
+                    <button class="btn btn-option" onclick="checkAnswer(4, 'c')">All of Me - John Legend</button>
+                    <button class="btn btn-option" onclick="checkAnswer(4, 'd')">A Thousand Years - Christina Perri</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Correct Answer Pages with Location & Code -->
+        <div id="correct1" class="page">
+            <div class="correct-card">
+                <h2>🎉 Correct! 🎉</h2>
+                <p class="celebration-text">Amazing! You got it right!</p>
+                <div class="location-box">
+                    <h3>📍 Your Next Clue Location:</h3>
+                    <p class="location-hint">Go to the kitchen drawer where we keep the special treats!</p>
+                </div>
+                <div class="code-entry">
+                    <p>Enter the secret code you find there:</p>
+                    <input type="text" id="code1" class="code-input" placeholder="Enter code...">
+                    <button class="btn btn-primary" onclick="checkCode(1)">Submit Code</button>
+                    <p id="code1-error" class="error-message"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="correct2" class="page">
+            <div class="correct-card">
+                <h2>🎉 Correct! 🎉</h2>
+                <p class="celebration-text">You're on fire! Keep going!</p>
+                <div class="location-box">
+                    <h3>📍 Your Next Clue Location:</h3>
+                    <p class="location-hint">Check under your favourite pillow on the sofa!</p>
+                </div>
+                <div class="code-entry">
+                    <p>Enter the secret code you find there:</p>
+                    <input type="text" id="code2" class="code-input" placeholder="Enter code...">
+                    <button class="btn btn-primary" onclick="checkCode(2)">Submit Code</button>
+                    <p id="code2-error" class="error-message"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="correct3" class="page">
+            <div class="correct-card">
+                <h2>🎉 Correct! 🎉</h2>
+                <p class="celebration-text">You're almost there!</p>
+                <div class="location-box">
+                    <h3>📍 Your Next Clue Location:</h3>
+                    <p class="location-hint">Look in the place where you keep your favourite books!</p>
+                </div>
+                <div class="code-entry">
+                    <p>Enter the secret code you find there:</p>
+                    <input type="text" id="code3" class="code-input" placeholder="Enter code...">
+                    <button class="btn btn-primary" onclick="checkCode(3)">Submit Code</button>
+                    <p id="code3-error" class="error-message"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="correct4" class="page">
+            <div class="correct-card">
+                <h2>🎉 Correct! 🎉</h2>
+                <p class="celebration-text">Final clue!</p>
+                <div class="location-box">
+                    <h3>📍 Your Final Clue Location:</h3>
+                    <p class="location-hint">Check the wardrobe where you keep your coats!</p>
+                </div>
+                <div class="code-entry">
+                    <p>Enter the final secret code:</p>
+                    <input type="text" id="code4" class="code-input" placeholder="Enter code...">
+                    <button class="btn btn-primary" onclick="checkCode(4)">Submit Code</button>
+                    <p id="code4-error" class="error-message"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wrong Answer Page -->
+        <div id="wrong" class="page">
+            <div class="wrong-card">
+                <h2>😅 Oops!</h2>
+                <div class="funny-image">🙈</div>
+                <p class="funny-text" id="funny-text">That's not quite right!</p>
+                <p class="encouragement">Don't worry, you've got this! Give it another try!</p>
+                <button class="btn btn-secondary" onclick="tryAgain()">Try Again! 💪</button>
+            </div>
+        </div>
+
+        <!-- Final Success Page -->
+        <div id="success" class="page">
+            <div class="success-card">
+                <h1>🎊 Congratulations! 🎊</h1>
+                <div class="confetti">🎉🎈🎁🎂🎉</div>
+                <p class="success-message">
+                    You've completed the birthday treasure hunt!
+                </p>
+                <p class="final-message">
+                    Happy Birthday, Suzi! You are absolutely amazing and deserve all the happiness in the world! 
+                </p>
+                <div class="hearts">💖💖💖</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
